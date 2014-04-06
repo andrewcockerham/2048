@@ -82,7 +82,6 @@ HTMLActuator.prototype.addTile = function (tile) {
   } else if (tile.value == 512) {
     inner.textContent = "五百 十二"
   } else if (tile.value == 1024) {
-    // inner.textContent = "一千零" + String.fromCharCode(13) + "二十四"
     inner.innerText = "一千零\n二十四"
   } else if (tile.value == 2048) {
     inner.innerText = "二千零\n四十八"
