@@ -62,7 +62,34 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+  // here I'm inputting Chinese characters based on the title.value
+  if (tile.value == 2) {
+    inner.textContent = "二"
+  } else if (tile.value == 4) {
+    inner.textContent = "四"
+  } else if (tile.value == 8) {
+    inner.textContent = "八"
+  } else if (tile.value == 16) {
+    inner.textContent = "十六"
+  } else if (tile.value == 32) {
+    inner.textContent = "三十二"
+  } else if (tile.value == 64) {
+    inner.textContent = "六十四"
+  } else if (tile.value == 128) {
+    inner.innerText = "一百\n二十八"
+  } else if (tile.value == 256) {
+    inner.innerText = "二百\n五十六"
+  } else if (tile.value == 512) {
+    inner.textContent = "五百 十二"
+  } else if (tile.value == 1024) {
+    // inner.textContent = "一千零" + String.fromCharCode(13) + "二十四"
+    inner.innerText = "一千零\n二十四"
+  } else if (tile.value == 2048) {
+    inner.innerText = "二千零\n四十八"
+  } else {
+    inner.textContent = tile.value;
+  }
+
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
